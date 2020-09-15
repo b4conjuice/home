@@ -4,7 +4,7 @@ const DEFAULT_TITLE = 'home'
 
 const Page = ({ title = DEFAULT_TITLE, children }) => {
   return (
-    <div className="flex flex-col min-h-screen text-gray-900 bg-gray-100">
+    <div className="flex flex-col min-h-screen bg-gray-100 dark:bg-cobalt dark:text-gray-100 text-cobalt">
       <Head>
         <link rel="manifest" href="/manifest.json" />
         <meta name="mobile-web-app-capable" content="yes" />

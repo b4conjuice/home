@@ -6,11 +6,11 @@ const Home = ({ markdown }) => (
   <Page>
     <main className="flex flex-col flex-grow space-y-4">
       <article
-        className="flex-grow p-4 mx-4 my-4 prose bg-white rounded-lg shadow md:mx-auto lg:px-8 lg:py-4 lg:prose-xl md:container lg:max-w-3xl"
+        className="flex-grow p-4 mx-4 my-4 prose bg-white rounded-lg shadow md:mx-auto lg:px-8 lg:py-4 lg:prose-xl md:container lg:max-w-3xl dark:bg-cb-dark-blue"
         dangerouslySetInnerHTML={{ __html: markdown }}
       />
     </main>
-    <footer className="pb-4 text-2xl text-center text-gray-100 bg-cobalt sm:text-3xl">
+    <footer className="pb-4 text-2xl text-center text-gray-100 lg:pt-4 bg-cobalt dark:bg-cb-dark-blue sm:text-3xl">
       <div className="lg:container lg:mx-auto lg:max-w-3xl">
         <div>
           built{' '}

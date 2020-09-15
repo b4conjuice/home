@@ -1,6 +1,11 @@
 module.exports = {
+  experimental: {
+    darkModeVariant: true,
+    applyComplexClasses: true,
+  },
   future: {
     removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
   },
   purge: [
     './src/components/**/*.{js,ts,jsx,tsx}',
@@ -8,31 +13,17 @@ module.exports = {
   ],
   theme: {
     typography: theme => ({
-      xl: {
-        css: {
-          h1: {
-            marginTop: 0,
-            fontWeight: 'bold',
-            fontSize: theme('text.3xl'),
-          },
-          h2: {
-            marginTop: '2rem',
-            marginBottom: '1rem',
-          },
-          'ul > li': {
-            paddingLeft: 0,
-          },
-          a: {
-            fontSize: '4rem',
-          },
-        },
-      },
       default: {
         css: {
-          color: theme('colors.cobalt'),
-          strong: theme('colors.cobalt'),
+          // color: theme('colors.cobalt'),
+          color: false,
+          '@apply text-cobalt dark:text-gray-300': '',
+          'h1, h2, h3, h4': {
+            // color: theme('colors.cobalt'),
+            color: false,
+            '@apply text-cobalt dark:text-gray-300': '',
+          },
           h1: {
-            color: theme('colors.cobalt'),
             fontWeight: 'bold',
             fontSize: theme('text.3xl'),
             textAlign: 'center',
@@ -66,6 +57,25 @@ module.exports = {
           },
         },
       },
+      xl: {
+        css: {
+          h1: {
+            marginTop: 0,
+            fontWeight: 'bold',
+            fontSize: theme('text.3xl'),
+          },
+          h2: {
+            marginTop: '2rem',
+            marginBottom: '1rem',
+          },
+          'ul > li': {
+            paddingLeft: 0,
+          },
+          a: {
+            fontSize: '4rem',
+          },
+        },
+      },
       sm: {
         css: {
           h1: {
@@ -90,7 +100,10 @@ module.exports = {
     },
   },
   variants: {
-    borderWidth: ['responsive', 'hover'],
+    borderWidth: ['responsive', 'hover', 'dark'],
+    textColor: ['responsive', 'hover', 'focus', 'dark'],
+    backgroundColor: ['responsive', 'hover', 'focus', 'dark'],
+    borderColor: ['responsive', 'hover', 'dark'],
   },
   plugins: [require('@tailwindcss/typography')],
 }
